@@ -111,7 +111,7 @@ void shellsort(int arr[], int num)
 int main()
 {
 
-    int arr[1000];
+    int arr[10];
     int size = sizeof(arr) / sizeof(arr[0]);
     clock_t start, sfarsit;
     double durata;
@@ -142,7 +142,7 @@ int main()
     // Quicksort
     printf("\nVectorul sortat este(QUICKSORT):\n");
     start = clock();
-    quickSort(arr, size);
+    quickSort(arr, size, 0, size - 1);
     sfarsit = clock();
     durata = ((double)sfarsit - start) / CLOCKS_PER_SEC;
     afisare(arr, size);
