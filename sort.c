@@ -85,12 +85,35 @@ void bubbleSort(int arr[], int size)
         }
     }
 }
-
+// SHellsort
+void shellsort(int arr[], int num)
+{
+    int i, j, k, tmp;
+    for (i = num / 2; i > 0; i = i / 2)
+    {
+        for (j = i; j < num; j++)
+        {
+            for (k = j - i; k >= 0; k = k - i)
+            {
+                if (arr[k + i] >= arr[k])
+                    break;
+                else
+                {
+                    tmp = arr[k];
+                    arr[k] = arr[k + i];
+                    arr[k + i] = tmp;
+                }
+            }
+        }
+    }
+}
+//.................
 int main()
 {
 
     int arr[] = {33, 6, 7, 34, 23, 7, 8, 0, 14};
     int size = sizeof(arr) / sizeof(arr[0]);
+    creare(arr, size);
     printf("\nVectorul nesortat este:");
     afisare(arr, size);
 
@@ -104,6 +127,12 @@ int main()
 
     printf("\nVectorul sortat este(QUICKSORT):");
     quickSort(arr, size, 0, 5);
+    afisare(arr, size);
+    //..........
+
+    // shellsort
+    printf("\nVectorul sortat este(SHELLSORT):");
+    shellsort(arr, size, 0, n - 1);
     afisare(arr, size);
     //..........
 
