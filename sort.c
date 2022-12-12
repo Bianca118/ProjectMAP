@@ -111,30 +111,42 @@ void shellsort(int arr[], int num)
 int main()
 {
 
-    int arr[] = {33, 6, 7, 34, 23, 7, 8, 0, 14};
+    int arr[1000];
     int size = sizeof(arr) / sizeof(arr[0]);
+    clock_t start, sfarsit;
+    double durata;
     creare(arr, size);
-    printf("\nVectorul nesortat este:");
+    printf("Vectorul nesortat este:");
     afisare(arr, size);
 
-    // bubblesort
-    printf("\nVectorul sortat este(BUBBLESORT):");
+    // Bubblesort
+    printf("\nVectorul sortat este(BUBBLESORT):\n");
+    start = clock();
     bubbleSort(arr, size);
+    sfarsit = clock();
+    durata = ((double)sfarsit - start) / CLOCKS_PER_SEC;
     afisare(arr, size);
-    //.........
+    printf("\ndurata este %f ", durata);
+    //.......
 
-    // quicksort
-
-    printf("\nVectorul sortat este(QUICKSORT):");
-    quickSort(arr, size, 0, 5);
+    // SHELLSORT
+    printf("\nVectorul sortat este(SHELLSORT):\n");
+    start = clock();
+    shellsort(arr, size);
+    sfarsit = clock();
+    durata = ((double)sfarsit - start) / CLOCKS_PER_SEC;
     afisare(arr, size);
-    //..........
+    printf("\ndurata este %f ", durata);
+    //............
 
-    // shellsort
-    printf("\nVectorul sortat este(SHELLSORT):");
-    shellsort(arr, size, 0, n - 1);
+    // Quicksort
+    printf("\nVectorul sortat este(QUICKSORT):\n");
+    start = clock();
+    quickSort(arr, size);
+    sfarsit = clock();
+    durata = ((double)sfarsit - start) / CLOCKS_PER_SEC;
     afisare(arr, size);
-    //..........
-
+    printf("\ndurata este %f ", durata);
+    //...............
     return 0;
 }
