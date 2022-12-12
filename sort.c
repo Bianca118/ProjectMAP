@@ -1,7 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
+void creare(int *arr, int n)
+{
+    int i, j, flag, nr;
+    srand(time(NULL));
+    for (i = 0; i < n; i++)
+    {
+        flag = 1;
+        while (flag)
+        {
+            flag = 0;
+            nr = rand() % 1000;
+            for (j = 0; j < n; j++)
+                if (arr[j] == nr)
+                    flag = 1;
+            if (!flag)
+            {
+                arr[i] = nr;
+                break;
+            }
+        }
+    }
+}
 //.............................
 void afisare(int arr[], int n)
 {
@@ -13,6 +34,7 @@ void afisare(int arr[], int n)
         printf("%d ", arr[i]);
     }
 }
+
 // quicksort
 void quickSort(int arr[], int n, int left, int right)
 {
