@@ -111,7 +111,7 @@ void shellsort(int arr[], int num)
 int main()
 {
 
-    int arr[10];
+    int arr[100];
     int size = sizeof(arr) / sizeof(arr[0]);
     clock_t start, sfarsit;
     double durata;
