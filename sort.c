@@ -111,7 +111,7 @@ void shellsort(int arr[], int num)
 int main()
 {
 
-    int arr[100];
+    int arr[10000];
     int size = sizeof(arr) / sizeof(arr[0]);
     clock_t start, sfarsit;
     double durata;
@@ -126,7 +126,7 @@ int main()
     sfarsit = clock();
     durata = ((double)sfarsit - start) / CLOCKS_PER_SEC;
     afisare(arr, size);
-    printf("\ndurata este %f ", durata);
+    printf("\nDurata este %f ", durata);
     //.......
 
     // SHELLSORT
